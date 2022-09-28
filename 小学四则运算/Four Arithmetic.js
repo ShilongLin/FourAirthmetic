@@ -83,9 +83,9 @@
         for (let i = 0; i < Number_MathSign + 1; i++) {
             let flag = Math.floor(Math.random() * 2);
             if (flag == 0) {
-                Array_Number[i] = new True_Faction(Math.floor(Math.random(this.r - 1) + 1), 1);
+                Array_Number[i] = new True_Faction(Math.floor(Math.random() * (this.r - 1) + 1), 1);
             } else {
-                Array_Number[i] = new True_Faction(Math.floor(Math.random(this.r - 1) + 1), Math.floor(Math.random() * (this.r - 1) + 1));
+                Array_Number[i] = new True_Faction(Math.floor(Math.random() * (this.r - 1) + 1), Math.floor(Math.random() * (this.r - 1) + 1));
             }
             console.log('this:' + Array_Number[i]);
         }
@@ -107,7 +107,7 @@
                 console.log('2-1');
             }
         } else if (Number_MathSign == 3) {
-            let flag = Math.floor(Math.random() * 3);
+            let flag = Math.floor(Math.random() * 6);
             if (flag == 0) {
                 Array_ExpresstionString.splice(2, 0, '(');
                 Array_ExpresstionString.push(')');
@@ -157,26 +157,29 @@
                 }
             }
         }
-        for (let i = 0; i < Array_ExpresstionString.length; i++) {
+        for (let i = 0; i < Array_ExpresstionString.length;) {
             if (Array_ExpresstionString[i] == '*') {
                 let a = (Array_ExpresstionString[i - 1].integer * Array_ExpresstionString[i - 1].denominator + Array_ExpresstionString[i - 1].molecule) * (Array_ExpresstionString[i + 1].integer * Array_ExpresstionString[i + 1].denominator + Array_ExpresstionString[i + 1].molecule);
                 let b = (Array_ExpresstionString[i - 1].denominator) * (Array_ExpresstionString[i + 1].denominator);
                 let newnumber = new True_Faction(a, b);
                 Array_ExpresstionString.splice(i - 1, 3, newnumber);
+                i--;
             } else if (Array_ExpresstionString[i] == '/') {
                 let a = (Array_ExpresstionString[i - 1].integer * Array_ExpresstionString[i - 1].denominator + Array_ExpresstionString[i - 1].molecule) * (Array_ExpresstionString[i + 1].denominator);
                 let b = (Array_ExpresstionString[i - 1].denominator) * (Array_ExpresstionString[i + 1].integer * Array_ExpresstionString[i + 1].denominator + Array_ExpresstionString[i + 1].molecule);
                 let newnumber = new True_Faction(a, b);
                 Array_ExpresstionString.splice(i - 1, 3, newnumber);
+                i--;
             }
+            i++;
         }
-        for (let i = 0; i < Array_ExpresstionString.length; i++) {
+        for (let i = 0; i < Array_ExpresstionString.length;) {
             if (Array_ExpresstionString[i] == '+') {
                 let a = ((Array_ExpresstionString[i - 1].integer * Array_ExpresstionString[i - 1].denominator + Array_ExpresstionString[i - 1].molecule) * (Array_ExpresstionString[i + 1].denominator)) + ((Array_ExpresstionString[i + 1].integer * Array_ExpresstionString[i + 1].denominator + Array_ExpresstionString[i + 1].molecule) * (Array_ExpresstionString[i - 1].denominator));
                 let b = (Array_ExpresstionString[i - 1].denominator) * (Array_ExpresstionString[i + 1].denominator);
                 let newnumber = new True_Faction(a, b);
                 Array_ExpresstionString.splice(i - 1, 3, newnumber);
-            } else if (Array_ExpresstionString[i] == '/') {
+            } else if (Array_ExpresstionString[i] == '-') {
                 let a = ((Array_ExpresstionString[i - 1].integer * Array_ExpresstionString[i - 1].denominator + Array_ExpresstionString[i - 1].molecule) * (Array_ExpresstionString[i + 1].denominator)) - ((Array_ExpresstionString[i + 1].integer * Array_ExpresstionString[i + 1].denominator + Array_ExpresstionString[i + 1].molecule) * (Array_ExpresstionString[i - 1].denominator));
                 let b = (Array_ExpresstionString[i - 1].denominator) * (Array_ExpresstionString[i + 1].denominator);
 
@@ -187,6 +190,7 @@
                     Array_ExpresstionString.splice(i - 1, 3, newnumber);
                 }
             }
+            i++;
         }
         let answer = Array_ExpresstionString[0];
         return answer;
