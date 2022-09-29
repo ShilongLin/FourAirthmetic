@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/背景图.jpg);
+}
+
+/* 头部区 */
+.header {
+    margin-left: 285px;
+    width: 740px;
+    height: 520px;
+    /* margin: 0 auto; */
+}
+
+.param {
+    margin-top: 170px;
+    padding-top: 30px;
+    float: left;
+    width: 180px;
+    height: 180px;
+    background-color: rgb(123, 238, 77);
+    border-radius: 16px 0 0 10px;
+}
+
+/* 展示题目区 */
+.show {
+    float: right;
+    width: 280px;
+    height: 520px;
+}
+
+.title1 {
+    border-radius: 16px 0 0 0;
+    padding-top: 13px;
+    height: 50px;
+    background-color: rgb(189, 67, 226);
+    text-align: center;
+    color: white;
+    font: bold 24px "微软雅黑" ;
+}
+.show #airthmeticString {
+    width: 280px;
+    height: 457px;
+    background-color: #fff;
+    overflow: scroll;
+}
+
+
+
+
+/* 展示答案区 */
+.answer {
+    float: right;
+    width: 280px;
+    height: 520px;
+}
+.answer .title2 {
+    border-radius:0 16px 0 0;
+    padding-top: 13px;
+    height: 50px;
+    background-color: rgb(238, 241, 34);
+    text-align: center;
+    color: white;
+    font: bold 24px "微软雅黑" ;
+}
+.answer #answerString {
+    width: 280px;
+    height: 457px;
+    background-color: #fff;
+    overflow: scroll;
+}
+
+
+
+
+
+/* 审核区 */
+.check {
+    margin: 0 auto;
+    width: 560px;
+    height: 270px;
+    /* background-color: rgb(209, 96, 96); */
+    border-radius: 0 0 16px 16px ;
+}
+
+.check .title3 {
+    padding-top: 7px;
+    height: 38px;
+    background-color: rgb(22, 163, 133);
+    font: bold 24px "微软雅黑";
+    color: white;
+    text-align: center;
+}
+
+.check .result {
+    margin-top: 20px;
+}
+
+.check #resultString {
+    overflow: scroll;
+    width: 560px;
+    height: 145px;
+    background-color: #fff; 
+}
