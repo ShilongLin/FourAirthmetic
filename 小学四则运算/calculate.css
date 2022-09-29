@@ -4,6 +4,7 @@ body {
     background-image: url(images/背景图.jpg);
 }
 
+
 /* 头部区 */
 .header {
     margin-left: 285px;
@@ -12,15 +13,30 @@ body {
     /* margin: 0 auto; */
 }
 
+
+
+/* 参数输入区 */
 .param {
     margin-top: 170px;
-    padding-top: 30px;
+    padding-top: 25px;
     float: left;
     width: 180px;
-    height: 180px;
+    height: 165px;
     background-color: rgb(123, 238, 77);
     border-radius: 16px 0 0 10px;
 }
+.param .text {
+    text-align: center;
+}
+.param input {
+    margin-left: 4px;
+}
+.param button {
+    margin: 15px 0 0 68px;
+}
+
+
+
 
 /* 展示题目区 */
 .show {
@@ -28,7 +44,7 @@ body {
     width: 280px;
     height: 520px;
 }
-
+/* 标题 */
 .title1 {
     border-radius: 16px 0 0 0;
     padding-top: 13px;
@@ -38,6 +54,7 @@ body {
     color: white;
     font: bold 24px "微软雅黑" ;
 }
+/* 空白展示区域 */
 .show #airthmeticString {
     width: 280px;
     height: 457px;
@@ -54,6 +71,8 @@ body {
     width: 280px;
     height: 520px;
 }
+
+/* 标题 */
 .answer .title2 {
     border-radius:0 16px 0 0;
     padding-top: 13px;
@@ -63,6 +82,8 @@ body {
     color: white;
     font: bold 24px "微软雅黑" ;
 }
+
+/* 空白展示区域 */
 .answer #answerString {
     width: 280px;
     height: 457px;
@@ -74,31 +95,53 @@ body {
 
 
 
-/* 审核区 */
+
 .check {
-    margin: 0 auto;
-    width: 560px;
-    height: 270px;
+    margin-left: 285px;
+    width: 740px;
     /* background-color: rgb(209, 96, 96); */
     border-radius: 0 0 16px 16px ;
 }
 
-.check .title3 {
-    padding-top: 7px;
-    height: 38px;
+/* 答案文本地址输入区 */
+.check .url {
+    padding-top: 20px;
+    float: left;
+    width: 180px;
+    height: 130px;
+    background-color: rgb(123, 238, 77);
+    border-radius: 16px 0 0 16px;
+}
+.check .url .text {
+    text-align: center;
+}
+.check .url input {
+    margin-left: 4px;
+}
+.check .url button {
+    margin: 15px 0 0 68px;
+}
+
+
+
+/* 结果展示区 */
+.check .result {
+    float: right;
+}
+/* 标题 */
+.check .result .title3 {
+    padding-top: 14px;
+    width: 560px;
+    height: 50px;
     background-color: rgb(22, 163, 133);
     font: bold 24px "微软雅黑";
     color: white;
     text-align: center;
 }
-
-.check .result {
-    margin-top: 20px;
-}
-
+/* 空白展示区域 */
 .check #resultString {
     overflow: scroll;
     width: 560px;
-    height: 145px;
+    height: 206px;
     background-color: #fff; 
 }
