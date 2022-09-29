@@ -79,6 +79,24 @@
         this.expressions = expressions;
     }
 
+    // 获取所有的式子字符串
+    Four_Airthmetic.prototype.getAllAirthmeticString = function () {
+        let AllAirthmeticString = '';
+        for (let i = 0; i < this.n; i++) {
+            AllAirthmeticString += this.expressions[i].getExpressionString() + '</br>';
+        }
+        return AllAirthmeticString;
+    }
+
+    // 获取所有式子的答案字符串
+    Four_Airthmetic.prototype.getAllanswerString() = function () {
+        let AllanswerString = '';
+        for (let i = 0; i < this.n; i++) {
+            AllanswerString += this.expressions[i].answer + '</br>';
+        }
+        return AllanswerString;
+    }
+
     Four_Airthmetic.prototype.getOneAirthmetic = function () {
         // 生成数学字符的数目
         let Number_MathSign = Math.floor(Math.random() * 3 + 1);
@@ -203,11 +221,4 @@
         let answer = Array_ExpresstionString[0];
         return answer;
     }
-
-    /*
-    测试区
-    */
-    let xx = new Four_Airthmetic(10, 10);
-    console.log(xx);
-    console.log(xx.expressions[0].getExpressionString());
 }
