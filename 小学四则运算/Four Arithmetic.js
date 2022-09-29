@@ -46,6 +46,17 @@
     }
 
     /*
+    为一个表达式做返回格式化公式
+    */
+    Expression.prototype.getExpressionString = function () {
+        let ExpressionString = '';
+        for (let i = 0; i < this.Array_ExpresstionString.length; i++) {
+            ExpressionString += this.Array_ExpresstionString[i].toString();
+        }
+        return ExpressionString;
+    }
+
+    /*
     为真分数的构造函数原型添加toString方法
     */
     True_Faction.prototype.toString = function () {
@@ -73,8 +84,8 @@
         let Number_MathSign = Math.floor(Math.random() * 3 + 1);
 
         // 生成随机字符数目的队列
-        // - 0,1,2,3分别代表+，-，*，/
-        let Array_char = ['+', '-', '*', '/'];
+        // - 0,1,2,3分别代表+，-，×，/
+        let Array_char = ['+', '-', '×', '÷'];
         let Array_MathSign = new Array(Number_MathSign);
         for (let i = 0; i < Number_MathSign; i++) {
             let flag = Math.floor(Math.random() * 4);
@@ -155,13 +166,13 @@
             }
         }
         for (let i = 0; i < Array_ExpresstionString.length;) {
-            if (Array_ExpresstionString[i] == '*') {
+            if (Array_ExpresstionString[i] == '×') {
                 let a = (Array_ExpresstionString[i - 1].integer * Array_ExpresstionString[i - 1].denominator + Array_ExpresstionString[i - 1].molecule) * (Array_ExpresstionString[i + 1].integer * Array_ExpresstionString[i + 1].denominator + Array_ExpresstionString[i + 1].molecule);
                 let b = (Array_ExpresstionString[i - 1].denominator) * (Array_ExpresstionString[i + 1].denominator);
                 let newnumber = new True_Faction(a, b);
                 Array_ExpresstionString.splice(i - 1, 3, newnumber);
                 i--;
-            } else if (Array_ExpresstionString[i] == '/') {
+            } else if (Array_ExpresstionString[i] == '÷') {
                 let a = (Array_ExpresstionString[i - 1].integer * Array_ExpresstionString[i - 1].denominator + Array_ExpresstionString[i - 1].molecule) * (Array_ExpresstionString[i + 1].denominator);
                 let b = (Array_ExpresstionString[i - 1].denominator) * (Array_ExpresstionString[i + 1].integer * Array_ExpresstionString[i + 1].denominator + Array_ExpresstionString[i + 1].molecule);
                 let newnumber = new True_Faction(a, b);
@@ -198,5 +209,5 @@
     */
     let xx = new Four_Airthmetic(10, 10);
     console.log(xx);
-
+    console.log(xx.expressions[0].getExpressionString());
 }
