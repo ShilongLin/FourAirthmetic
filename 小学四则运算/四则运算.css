@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.show {
+    float: left;
+    overflow: auto;
+    width: 200px;
+    height: 400px;
+    background-color: rgb(50, 231, 162);
+}
+
+.title1 {
+    padding-top: 13px;
+    height: 50px;
+    background-color: rgb(189, 67, 226);
+    text-align: center;
+    color: white;
+    font: bold 24px "微软雅黑" ;
+}
+
+
+.answer {
+    float: left;
+    overflow: auto;
+    width: 200px;
+    height: 400px;
+    background-color: rgb(66, 163, 224);
+}
+
+.title2 {
+    padding-top: 13px;
+    height: 50px;
+    background-color: rgb(238, 241, 34);
+    text-align: center;
+    color: white;
+    font: bold 24px "微软雅黑" ;
+}
