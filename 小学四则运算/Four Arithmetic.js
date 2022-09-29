@@ -61,12 +61,16 @@
     function Four_Airthmetic(n, r) {
         this.n = n;
         this.r = r;
+        let expressions = [];
+        for (let i = 0; i < n; i++) {
+            expressions[i] = this.getOneAirthmetic();
+        }
+        this.expressions = expressions;
     }
 
     Four_Airthmetic.prototype.getOneAirthmetic = function () {
         // 生成数学字符的数目
         let Number_MathSign = Math.floor(Math.random() * 3 + 1);
-        // console.log('字符数为'+Number_MathSign)
 
         // 生成随机字符数目的队列
         // - 0,1,2,3分别代表+，-，*，/
@@ -75,7 +79,6 @@
         for (let i = 0; i < Number_MathSign; i++) {
             let flag = Math.floor(Math.random() * 4);
             Array_MathSign[i] = Array_char[flag];
-            console.log(Array_MathSign[i]);
         }
 
         // 生成随机
@@ -87,7 +90,6 @@
             } else {
                 Array_Number[i] = new True_Faction(Math.floor(Math.random() * (this.r - 1) + 1), Math.floor(Math.random() * (this.r - 1) + 1));
             }
-            console.log('this:' + Array_Number[i]);
         }
 
         // 随机生成括号
@@ -98,33 +100,28 @@
             Array_ExpresstionString.push(Array_MathSign[i]);
             Array_ExpresstionString.push(Array_Number[i + 1]);
         }
-        console.log(Array_ExpresstionString);
         if (Number_MathSign == 2) {
             let flag = Math.floor(Math.random() * 2);
             if (flag == 0) {
                 Array_ExpresstionString.splice(2, 0, "(");
                 Array_ExpresstionString.push(')');
-                console.log('2-1');
             }
         } else if (Number_MathSign == 3) {
             let flag = Math.floor(Math.random() * 6);
             if (flag == 0) {
                 Array_ExpresstionString.splice(2, 0, '(');
                 Array_ExpresstionString.push(')');
-                console.log('3-0');
             }
             else if (flag == 1) {
                 Array_ExpresstionString.splice(2, 0, '(', '(');
                 Array_ExpresstionString.splice(7, 0, ')');
                 Array_ExpresstionString.push(')');
-                console.log('3-1');
             }
             else if (flag == 2) {
                 Array_ExpresstionString.splice(2, 0, '(');
                 Array_ExpresstionString.splice(5, 0, '(');
                 Array_ExpresstionString.push(')');
                 Array_ExpresstionString.push(')');
-                console.log('3-2');
             }
         }
 
@@ -199,13 +196,7 @@
     /*
     测试区
     */
-    // let xx = new True_Faction(2, 8);
-    // console.log(xx.toString());
-    // console.log(eval("3+9/2+4"));
     let xx = new Four_Airthmetic(10, 10);
-    let expresstion = xx.getOneAirthmetic();
-    console.log(expresstion);
-    // xx.getOneAirthmetic();
-    // xx.getOneAirthmetic();
-    // getAnswerFromExpresstion();
+    console.log(xx);
+
 }
