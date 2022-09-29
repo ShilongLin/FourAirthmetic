@@ -83,16 +83,16 @@
     Four_Airthmetic.prototype.getAllAirthmeticString = function () {
         let AllAirthmeticString = '';
         for (let i = 0; i < this.n; i++) {
-            AllAirthmeticString += this.expressions[i].getExpressionString() + '</br>';
+            AllAirthmeticString += '(' + (i + 1) + ') ' + this.expressions[i].getExpressionString() + '</br>';
         }
         return AllAirthmeticString;
     }
 
     // 获取所有式子的答案字符串
-    Four_Airthmetic.prototype.getAllanswerString() = function () {
+    Four_Airthmetic.prototype.getAllanswerString = function () {
         let AllanswerString = '';
         for (let i = 0; i < this.n; i++) {
-            AllanswerString += this.expressions[i].answer + '</br>';
+            AllanswerString += '(' + (i + 1) + ') ' + this.expressions[i].answer + '</br>';
         }
         return AllanswerString;
     }
