@@ -16,10 +16,10 @@
     <div class="header">
         <!-- 参数输入区域 -->
         <div class="param">
-            请输入题目的数量：
+            <div class="text">请输入题目的数量</div>
             <input type="text" id="n">
-            <br><br>
-            请输入参数的范围：
+             <br><br>
+            <div class="text">请输入参数的范围</div>
             <input type="text" id="r">
             <button id="config_n_r">确认</button>
         </div>
@@ -53,20 +53,23 @@
     <!-- 审核题目区域 -->
     <div class="check">
 
-        <div class="url">
-            请输入要对比的答案文件地址： <br>
-            <input type="text" id="url">
-            <button id="config_url">确认</button>
+    <div class="url">
+        <div class="text">
+            <div>请输入要对比的</div>
+            <div>答案文件地址</div>
+        </div>  
+        <input type="text" id="url">
+        <button id="config_url">确认</button>
+    </div>
+
+    <div class="result">
+        <div class="title3">
+            结果展示区
         </div>
 
-        <div class="result">
-            <div class="title3">
-                结果展示区
-            </div>
-
-            <div class="area">
-                <div id="resultString"></div>
-            </div>
+        <div class="area">
+            <div id="resultString"></div>
+        </div>   
         </div>
     </div>
 </body>
