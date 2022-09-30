@@ -3,13 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>小学四则运算生成器</title>
     <link rel="stylesheet" href="calculate.css">
-    <script src="Four Arithmetic.js"></script>
-    <script src="latest.js"></script>
-    <script src="/package/require.js"></script>
 </head>
 
 <body>
@@ -55,11 +51,9 @@
     <div class="check">
 
         <div class="url">
-            <div class="text">
-                <div>请输入要对比的</div>
-                <div>答案文件地址</div>
+            <div class="uploadFile text" >
+                拖入答案文件到此区域
             </div>
-            <input type="text" id="url">
             <button id="config_url">确认</button>
         </div>
 
@@ -74,5 +68,6 @@
         </div>
     </div>
 </body>
-
+<script src="Four Arithmetic.js"></script>
+<script src="./render.js"></script>
 </html>

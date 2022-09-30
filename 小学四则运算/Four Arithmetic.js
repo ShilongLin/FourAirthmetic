@@ -79,20 +79,28 @@
         this.expressions = expressions;
     }
 
-    // 获取所有的式子字符串
-    Four_Airthmetic.prototype.getAllAirthmeticString = function () {
+    // 获取所有的式子字符串(mode=1时为innerHtml模式)
+    Four_Airthmetic.prototype.getAllAirthmeticString = function (mode) {
+        let temp;
+        if (mode == 1) {
+            temp = '</br>';
+        } else temp = '\n';
         let AllAirthmeticString = '';
         for (let i = 0; i < this.n; i++) {
-            AllAirthmeticString += '(' + (i + 1) + ') ' + this.expressions[i].getExpressionString() + '</br>';
+            AllAirthmeticString += '(' + (i + 1) + ') ' + this.expressions[i].getExpressionString() + temp;
         }
         return AllAirthmeticString;
     }
 
     // 获取所有式子的答案字符串
-    Four_Airthmetic.prototype.getAllanswerString = function () {
+    Four_Airthmetic.prototype.getAllanswerString = function (mode) {
+        let temp;
+        if (mode == 1) {
+            temp = '</br>';
+        } else temp = '\n';
         let AllanswerString = '';
         for (let i = 0; i < this.n; i++) {
-            AllanswerString += '(' + (i + 1) + ') ' + this.expressions[i].answer + '</br>';
+            AllanswerString += '(' + (i + 1) + ') ' + this.expressions[i].answer + temp;
         }
         return AllanswerString;
     }

@@ -1,0 +1,2 @@
+1. 需要node.js环境
+2. 需要在终端运行npm install下载依赖
